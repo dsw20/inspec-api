@@ -124,3 +124,8 @@ tags
 
 # sftp configuration file
 sftp-config.json
+
+
+### Inspec ###
+# version only templates
+database.py
