@@ -19,8 +19,9 @@ defmodule InspecApi.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", InspecApi do
-  #   pipe_through :api
-  # end
+  scope "/api", InspecApi do
+    pipe_through :api
+
+    resources "/v1/users", V1.UserController, except: [:new, :edit]
+  end
 end
