@@ -13,14 +13,33 @@
 alias InspecApi.Repo
 alias InspecApi.V1.User
 
-[
-  %User{
-    name: "Eduardo",
-    email: "eduardo@mail.com"
-  },
-  %User{
-    name: "Lucas",
-    email: "lucas@mail.com"
-  }
-] |> Enum.each(&Repo.insert!(&1))
+defmodule Seeds.InspecApi do
 
+  def import_from_csv(csv_path) do
+    persist = fn([nome, email]) ->
+      User.changeset(%User{}, %{"name" => nome, "email" => email})
+    end
+
+    File.read!(csv_path)
+    |> ExCsv.parse!(delimiter: ';',headings: true)
+    |> ExCsv.as(User)
+    |> Map.get(:body)
+    |> Enum.each(persist)
+
+  end
+
+  defp populate_user do
+    [
+      %User{
+        name: "Eduardo",
+        email: "eduardo@mail.com"
+      },
+      %User{
+        name: "Lucas",
+        email: "lucas@mail.com"
+      }
+    ] |> Enum.each(&Repo.insert!(&1))
+  end
+end
+
+Seeds.InspecApi.import_from_csv("test.csv")
