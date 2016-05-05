@@ -5,7 +5,6 @@ defmodule InspecApi.V1.ValorConvenio do
     field :valor_global, :float
     field :repasse_uniao, :float
     field :contrapartida_total, :float
-    field :contrapartida_total, :float
     field :contrapartida_bens_servicos, :float
     field :valor_desenbolcado, :float
     field :valor_empenhado, :float
@@ -13,7 +12,7 @@ defmodule InspecApi.V1.ValorConvenio do
     timestamps
   end
 
-  @required_fields ~w(valor_global repasse_uniao contrapartida_total contrapartida_total contrapartida_bens_servicos valor_desenbolcado valor_empenhado)
+  @required_fields ~w(valor_global repasse_uniao contrapartida_total contrapartida_bens_servicos valor_desenbolcado valor_empenhado)
   @optional_fields ~w()
 
   @doc """
