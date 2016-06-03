@@ -35,5 +35,7 @@ defmodule InspecApi.Endpoint do
     key: "_inspec_api_key",
     signing_salt: "fvtVupnO"
 
+  plug CORSPlug
+
   plug InspecApi.Router
 end
