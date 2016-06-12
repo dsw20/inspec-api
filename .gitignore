@@ -14,3 +14,81 @@ erl_crash.dump
 # secrets file as long as you replace its contents by environment
 # variables.
 /config/prod.secret.exs
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+*.DS_Store
+
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+coverage_report/
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# Configuration Files
+configuration/*
+!configuration/*.template
+!configuration/settings.py
+!configuration/__init__.py
+!configuration/apps.py
+!configuration/tests.py
+!configuration/statics.py
+
+# SQLite
+*.sqlite*
+
+# Others
+.sass-cache/
+.sonar/
+
+# Migrations
+**/migrations/*.py
+
+**/migrations/*.py.template
